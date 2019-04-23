@@ -1,0 +1,133 @@
+{
+    "chats": [
+        {
+            "id": 1,
+            "title": "famaly"
+        },
+        {
+            "id": 2,
+            "title": "work"
+        },
+        {
+            "id": 3,
+            "title": "friendchat"
+        }
+    ],
+    "friends": [
+        {
+            "friend_id": 2,
+            "user_id": 1
+        },
+        {
+            "friend_id": 6,
+            "user_id": 1
+        },
+        {
+            "friend_id": 5,
+            "user_id": 1
+        },
+        {
+            "friend_id": 1,
+            "user_id": 4
+        }
+    ],
+    "messages": [
+        {
+            "author": "admin",
+            "chat_id": 1,
+            "id": 1,
+            "post_time": 1556058165,
+            "text": "Hello mama!\n"
+        },
+        {
+            "author": "admin",
+            "chat_id": 2,
+            "id": 2,
+            "post_time": 1556058241,
+            "text": "Hello Colegue!\n"
+        },
+        {
+            "author": "admin",
+            "chat_id": 3,
+            "id": 3,
+            "post_time": 1556058324,
+            "text": "Hello anna!\n"
+        },
+        {
+            "author": "anna",
+            "chat_id": 3,
+            "id": 4,
+            "post_time": 1556058356,
+            "text": "Hello admin!!\nHow are you!\nNow i chake scrolling\nyes\nyes\nyes\nyes\nyes\nyes\n\n"
+        },
+        {
+            "author": "admin",
+            "chat_id": 3,
+            "id": 5,
+            "post_time": 1556058385,
+            "text": "Mda\n"
+        }
+    ],
+    "user_in_chat": [
+        {
+            "chat_id": 1,
+            "user_id": 6
+        },
+        {
+            "chat_id": 1,
+            "user_id": 5
+        },
+        {
+            "chat_id": 1,
+            "user_id": 1
+        },
+        {
+            "chat_id": 2,
+            "user_id": 2
+        },
+        {
+            "chat_id": 2,
+            "user_id": 1
+        },
+        {
+            "chat_id": 3,
+            "user_id": 1
+        },
+        {
+            "chat_id": 3,
+            "user_id": 4
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "password": "secret",
+            "username": "admin"
+        },
+        {
+            "id": 2,
+            "password": "secret",
+            "username": "user"
+        },
+        {
+            "id": 3,
+            "password": "asdf",
+            "username": "kola"
+        },
+        {
+            "id": 4,
+            "password": "asdfa",
+            "username": "anna"
+        },
+        {
+            "id": 5,
+            "password": "papa",
+            "username": "papa"
+        },
+        {
+            "id": 6,
+            "password": "mat",
+            "username": "mama"
+        }
+    ]
+}
