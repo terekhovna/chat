@@ -60,8 +60,7 @@ class User(JsonSupp, db.Model):
     def delete_friend(self, user):
         if not self.have_friend(user):
             return "i haven't got that friend"
-        friend = Friends(self.id, user.id)
-        db.session.delete(friend)
+        Friends.query.filter_by(user_id=self.id).filter_by(friend_id=user.id).delete()
         db.session.commit()
 
     def get_chats(self):
