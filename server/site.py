@@ -1,3 +1,4 @@
+#! usr/bin/python3
 def main():
     import argparse
     parser = argparse.ArgumentParser()

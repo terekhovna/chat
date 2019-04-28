@@ -1,4 +1,4 @@
-#! python3
+#! usr/bin/python3
 from wforms.ChooseSite import ChooseSite
 from tkinter import Tk, Frame, LEFT, RIGHT, TOP, BOTTOM
 
