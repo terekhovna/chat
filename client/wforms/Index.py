@@ -17,7 +17,7 @@ class Index(Form):
             return False
 
     def click_logout(self):
-        messagebox.showinfo('Logout', 'You are logout')
+        #messagebox.showinfo('Logout', 'You are logout')
         self.login_form.clear()
         self.switch(self.login_form)
 

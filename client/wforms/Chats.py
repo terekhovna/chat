@@ -24,7 +24,7 @@ class Channels(Form):
         if not self.check_connection():
             return False
         if delete_chat(self.site, self.username, self.password, num):
-            messagebox.showinfo('delete chat', 'You are delete chat!')
+            #   messagebox.showinfo('delete chat', 'You are delete chat!')
             return True
         messagebox.showerror('delete chat', "i can't delete this chat")
         return False
