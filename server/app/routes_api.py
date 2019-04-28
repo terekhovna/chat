@@ -16,19 +16,19 @@ def return_ok():
     return make_response(jsonify({'result': 'OK'}), 200)
 
 
-@app.route('/api', methods=['GET'])
+@app.route('/api/', methods=['GET'])
 def check_connection():
     return return_ok()
 
 
-@app.route('/api/login', methods=['GET'])
+@app.route('/api/login/', methods=['GET'])
 @auth.login_required
 def api_login():
     user = get_user(username=auth.username())
     return jsonify(user.to_json())
 
 
-@app.route('/api/register', methods=['POST'])
+@app.route('/api/register/', methods=['POST'])
 def api_register():
     js = request.get_json(force=True)
 
@@ -48,7 +48,7 @@ def api_register():
         return return_ok()
 
 
-@app.route('/api/friend', methods=['GET'])
+@app.route('/api/friend/', methods=['GET'])
 @auth.login_required
 def api_friend_get():
     user = get_user(username=auth.username())
@@ -56,7 +56,7 @@ def api_friend_get():
                     to_json(user.get_friends())})
 
 
-@app.route('/api/friend', methods=['POST'])
+@app.route('/api/friend/', methods=['POST'])
 @auth.login_required
 def api_friend_post():
     js = request.get_json(force=True)
@@ -76,7 +76,7 @@ def api_friend_post():
         return return_ok()
 
 
-@app.route('/api/friend', methods=['DELETE'])
+@app.route('/api/friend/', methods=['DELETE'])
 @auth.login_required
 def api_friend_delete():
     js = request.get_json(force=True)
@@ -96,7 +96,7 @@ def api_friend_delete():
         return return_ok()
 
 
-@app.route('/api/chats', methods=['GET'])
+@app.route('/api/chats/', methods=['GET'])
 @auth.login_required
 def api_get_chats():
     user = get_user(username=auth.username())
@@ -104,7 +104,7 @@ def api_get_chats():
                     to_json(user.get_chats())})
 
 
-@app.route('/api/chats', methods=['POST'])
+@app.route('/api/chats/', methods=['POST'])
 @auth.login_required
 def api_create_chat():
     user = get_user(username=auth.username())
@@ -134,7 +134,7 @@ def api_delete_chat_for_user():
         return return_ok()
 
 
-@app.route('/api/chats/<int:chat_id>', methods=['GET'])
+@app.route('/api/chats/<int:chat_id>/', methods=['GET'])
 @auth.login_required
 def api_get_messages(chat_id):
     user = get_user(username=auth.username())
@@ -146,7 +146,7 @@ def api_get_messages(chat_id):
                     'messages': to_json(get_messages(chat))})
 
 
-@app.route('/api/chats/<int:chat_id>', methods=['POST'])
+@app.route('/api/chats/<int:chat_id>/', methods=['POST'])
 @auth.login_required
 def api_post_message(chat_id):
     user = get_user(username=auth.username())

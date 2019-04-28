@@ -58,8 +58,8 @@ def delete_chat(user, chat_id):
     chat = user.get_chat(chat_id)
     if not chat:
         return "i haven't got chat with this id"
-
-    db.session.remove(UsersInChat(chat_id, user.id))
+    
+    UsersInChat.query.filter_by(chat_id=chat_id).filter_by(user_id=user.id).delete()
     db.session.commit()
 
 
