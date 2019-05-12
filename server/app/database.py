@@ -17,4 +17,3 @@ def dump_db(file):
     jso = {name: model.dump_objects()
            for model, name in zip(models, names)}
     json.dump(jso, fp=file, indent=4, sort_keys=True)
-

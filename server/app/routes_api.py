@@ -1,9 +1,8 @@
-from app import app, db
+from app import app
 from flask import jsonify, request
-from app.models import User, Friends, Chat
+from app.models import User, Chat
 from flask import make_response
 from app.authentic import auth
-from sqlalchemy import func
 from app.api_logic import get_user, get_max_id, register_user,\
     to_json, create_chat, delete_chat, post_message, get_messages
 
@@ -160,4 +159,3 @@ def api_post_message(chat_id):
         return return_error(re)
     else:
         return return_ok()
-

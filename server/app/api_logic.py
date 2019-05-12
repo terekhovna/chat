@@ -1,9 +1,5 @@
-from app import app, db
-from flask import jsonify, request
-from app.models import User, Friends, Chat, UsersInChat, Message
-from flask_httpauth import HTTPBasicAuth
-from flask import make_response
-from app.authentic import auth
+from app import db
+from app.models import User, Chat, UsersInChat, Message
 from sqlalchemy import func
 
 
@@ -14,10 +10,10 @@ def get_user(**kwargs):
 
 def register_user(user_id, username, password):
     if get_user(id=user_id):
-        return 'i have user with same id'
+        return "i have user with same id"
 
     if get_user(username=username):
-        return 'i have user with same username'
+        return "i have user with same username"
 
     user = User(user_id, username, password)
     db.session.add(user)
@@ -35,8 +31,10 @@ def to_json(object_list):
 
 def create_chat(admin, members, chat_id, title):
     members = [get_user(username=mem) for mem in members]
+
     if not all(admin.have_friend(mem) for mem in members):
         return "one of members is not admin's friend"
+
     if Chat.query.filter_by(id=chat_id).count() > 0:
         return "i already have chat with this id"
 
