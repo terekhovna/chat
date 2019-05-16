@@ -61,9 +61,9 @@ class NewChat(Form):
         self.friends_list_scrollbar = Scrollbar(self.left_frame, command=self.friends_listbox.yview)
         self.friends_listbox.config(yscrollcommand=self.friends_list_scrollbar.set)
 
-        self.right_frame = Frame(self.bottom_frame)
-        self.add_to_chat_button = Button(self.right_frame, text='>>', command=lambda: self.click_add())
-        self.remove_from_chat_button = Button(self.right_frame, text='<<', command=lambda: self.click_remove())
+        self.frame_add = Frame(self.bottom_frame)
+        self.add_to_chat_button = Button(self.frame_add, text='>>', command=lambda: self.click_add())
+        self.remove_from_chat_button = Button(self.frame_add, text='<<', command=lambda: self.click_remove())
 
         self.right_frame = Frame(self.bottom_frame)
         self.friends_in_chat_listbox = Listbox(self.right_frame, selectmode=EXTENDED)
@@ -90,7 +90,7 @@ class NewChat(Form):
         self.friends_list_scrollbar.pack(side=LEFT)
         self.friends_listbox.pack(side=LEFT)
 
-        self.right_frame.pack(side=LEFT)
+        self.frame_add.pack(side=LEFT)
         self.add_to_chat_button.pack()
         self.remove_from_chat_button.pack()
 
